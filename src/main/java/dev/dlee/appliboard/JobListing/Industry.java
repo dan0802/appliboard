@@ -1,4 +1,4 @@
-package dev.dlee.appliboard.model;
+package dev.dlee.appliboard.JobListing;
 
 public enum Industry {
     TECHNOLOGY,

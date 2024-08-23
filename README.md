@@ -6,9 +6,7 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-
+[LinkedIn][linkedin-shield]][linkedin-url]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -19,8 +17,6 @@
 <h1 align="center">Appliboard</h1>
 
 </div>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -48,19 +44,16 @@
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-
-
+This is a web application for managing and tracking job applications. The application uses Spring Boot to make default
+configurations and orchestrate the REST back-end through IoC. The front-end of the application interacts with the database and back-end 
+through REST operations.
 
 ### Built With
 
 * [![SpringBoot][Spring.io]][Spring-url]
-
-
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -79,10 +72,7 @@
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
+- [ ] Front-end application using Next.js
 
 See the [open issues](https://github.com/dan0802/appliboard/issues) for a full list of proposed features (and known issues).
 

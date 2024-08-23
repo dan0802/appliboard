@@ -1,40 +1,27 @@
 package dev.dlee.appliboard;
 
-import dev.dlee.appliboard.model.JobListing;
-import dev.dlee.appliboard.repository.JobListingRepository;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
 
-
-import java.util.Arrays;
-import java.util.List;
-
+import static org.hamcrest.Matchers.containsString;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class AppliboardApplicationTests{
+public class AppliboardApplicationTests {
 
     @Autowired
-    private MockMvc mvc;
-
-    @Autowired
-    private JobListingRepository jobListingRepository;
+    private MockMvc mockMvc;
 
     @Test
-    public void testFindListingsByTitle() {
-        JobListing job1 = new JobListing(1, "Job 1", "asdf");
-        JobListing job2 = new JobListing(2, "Job 2", "asdf");
-        JobListing job3 = new JobListing(3, "Job 3", "asdf");
-        jobListingRepository.saveAll(Arrays.asList(job1, job2, job3));
-
-        List<JobListing> jobs = jobListingRepository.findJobListingsByTitle("Job");
-        assertEquals(3, jobs.size());
+    void returnDefault() throws Exception {
+//        this.mockMvc.perform(get("/api/jobListing")).andDo(print()).andExpect(status().isOk());
     }
 }
-

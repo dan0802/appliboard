@@ -3,7 +3,6 @@ package dev.dlee.appliboard.JobListing;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 
 import jakarta.validation.Valid;
 
@@ -32,7 +31,6 @@ public class JobListingController {
     public List<JobListing> findAll() {
         return repository.findAll();
     }
-
 
     // EFFECTS: If id is found, returns JobListing with matching id, else fails
     //  THROWS: ResponseStatusException

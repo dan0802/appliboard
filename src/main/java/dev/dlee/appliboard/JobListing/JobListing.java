@@ -13,6 +13,6 @@ public record JobListing (
         Type type,
         Industry industry,
         Status status,
-        WorkStyle workstyle,
+        WorkStyle workStyle,
         LocalDateTime dateAdded
 ) {}

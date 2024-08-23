@@ -14,4 +14,4 @@ CREATE TABLE IF NOT EXISTS JobListing (
 );
 
 INSERT INTO JobListing(title,description,city,country,workStyle,salary,industry,status,dateAdded)
-VALUES('My First Job', 'Lorem ipsum','Vancouver','Canada','REMOTE',50000,'TECHNOLOGY','SENT',CURRENT_TIMESTAMP)
+VALUES('My First Job', 'Lorem ipsum','Vancouver','Canada','REMOTE',50000,'TECHNOLOGY','SENT',CURRENT_TIMESTAMP);

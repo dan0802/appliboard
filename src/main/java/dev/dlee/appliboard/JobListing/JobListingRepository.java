@@ -1,6 +1,5 @@
-package dev.dlee.appliboard.repository;
+package dev.dlee.appliboard.JobListing;
 
-import dev.dlee.appliboard.model.JobListing;
 import org.springframework.data.repository.ListCrudRepository;
 
 import java.util.List;

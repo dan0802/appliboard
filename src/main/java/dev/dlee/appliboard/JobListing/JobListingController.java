@@ -1,7 +1,5 @@
-package dev.dlee.appliboard.controller;
+package dev.dlee.appliboard.JobListing;
 
-import dev.dlee.appliboard.model.JobListing;
-import dev.dlee.appliboard.repository.JobListingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -29,6 +27,7 @@ public class JobListingController {
     public List<JobListing> findAll() {
         return repository.findAll();
     }
+
 
     // EFFECTS: If id is found, returns JobListing with matching id, else fails
     //  THROWS: ResponseStatusException

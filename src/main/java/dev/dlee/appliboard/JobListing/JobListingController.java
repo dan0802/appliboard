@@ -8,6 +8,8 @@ import org.springframework.web.server.ResponseStatusException;
 import jakarta.validation.Valid;
 
 import java.util.List;
+import java.util.Optional;
+
 /**
  * Implements and handles REST operations; @RestController annotation is crucial for Spring Boot to recognize the
  * class as a Controller
@@ -36,7 +38,11 @@ public class JobListingController {
     //  THROWS: ResponseStatusException
     @GetMapping("/{id}")
     public JobListing findById(@PathVariable Integer id) {
-        return repository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+        Optional<JobListing> job = repository.findById(id);
+        if (job.isEmpty()) {
+            throw new JobListingNotFoundException("Job not found!");
+        }
+        return job.get();
     }
 
     // EFFECTS: If request body is valid, creates a JobListing and saves it to the repository and returns
@@ -44,19 +50,15 @@ public class JobListingController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("")
     public void create(@Valid @RequestBody JobListing jobListing) {
-        repository.save(jobListing);
+        repository.create(jobListing);
     }
 
     // EFFECTS: If request body and id are valid, replaces JobListing with matching id with the new JobListing in
     //          the request body and returns http status 204
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PutMapping("/{id}")
-    public void update(@RequestBody JobListing jobListing, @PathVariable Integer id) {
-        if (!repository.existsById(id)) {
-            // Replace with ContentNotFoundException to allow custom error handling
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "JobListing Not Found!");
-        }
-        repository.save(jobListing);
+    public void update(@Valid @RequestBody JobListing jobListing, @PathVariable Integer id) {
+        repository.update(jobListing, id);
     }
 
     // EFFECTS: If the id is found, deletes the JobListing with matching id from the repository and returns
@@ -64,7 +66,7 @@ public class JobListingController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Integer id) {
-        repository.deleteById(id);
+        repository.delete(id);
     }
 
 }

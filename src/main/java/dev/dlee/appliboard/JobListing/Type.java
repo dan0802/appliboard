@@ -1,6 +1,6 @@
 package dev.dlee.appliboard.JobListing;
 
-public enum Level {
+public enum Type {
     FULL,
     PART,
     INTERN

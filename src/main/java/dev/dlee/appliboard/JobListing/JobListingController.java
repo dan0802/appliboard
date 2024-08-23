@@ -8,9 +8,12 @@ import org.springframework.web.server.ResponseStatusException;
 import jakarta.validation.Valid;
 
 import java.util.List;
-
-// Implements and handles REST operations
-// Requests are made by adding /api/jobListing
+/**
+ * Implements and handles REST operations; @RestController annotation is crucial for Spring Boot to recognize the
+ * class as a Controller
+ *
+ * @RequestMapping annotation sets where the API endpoint is accessed
+ * */
 @RestController
 @RequestMapping("/api/jobListing")
 public class JobListingController {

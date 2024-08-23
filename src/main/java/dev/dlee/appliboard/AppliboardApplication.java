@@ -34,7 +34,7 @@ public class AppliboardApplication {
 					Status.NOTHING,
 					WorkStyle.HYBRID,
 					LocalDateTime.now()
-			k);
+			);
 			log.info("Jobs:" + j);
 		};
 	}
